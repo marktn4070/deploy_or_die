@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://example.local/soap"
+    targetNamespace="http://example.local/soap">
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://example.local/soap">
+      <xsd:complexType name="files">
+        <xsd:sequence>
+          <xsd:element name="file_id" type="xsd:int" minOccurs="0"/>
+          <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="mimetype" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="data" type="xsd:base64Binary" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="workorder">
+        <xsd:sequence>
+          <xsd:element name="plate" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="brand" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="jobprovider_key" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="files" type="tns:files" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="workorderGetRequest">
+        <xsd:sequence>
+          <xsd:element name="workorder_id" type="xsd:int"/>
+          <xsd:element name="workorder" type="tns:workorder" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="workorderFileGetRequest">
+        <xsd:sequence>
+          <xsd:element name="file_id" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="workorderActionRequest">
+        <xsd:sequence>
+          <xsd:element name="workorder_id" type="xsd:int"/>
+          <xsd:element name="action_key" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="workorderGetRequest">
+    <wsdl:part name="parameters" type="tns:workorderGetRequest"/>
+  </wsdl:message>
+  <wsdl:message name="workorderGetResponse">
+    <wsdl:part name="parameters" type="tns:workorder"/>
+  </wsdl:message>
+
+  <wsdl:message name="workorderFileGetRequest">
+    <wsdl:part name="parameters" type="tns:workorderFileGetRequest"/>
+  </wsdl:message>
+  <wsdl:message name="workorderFileGetResponse">
+    <wsdl:part name="parameters" type="tns:files"/>
+  </wsdl:message>
+
+  <wsdl:message name="workorderActionRequest">
+    <wsdl:part name="parameters" type="tns:workorderActionRequest"/>
+  </wsdl:message>
+  <wsdl:message name="workorderActionResponse">
+    <wsdl:part name="parameters" type="xsd:string"/>
+  </wsdl:message>
+
+  <wsdl:portType name="operations">
+    <wsdl:operation name="workorderGet">
+      <wsdl:input message="tns:workorderGetRequest"/>
+      <wsdl:output message="tns:workorderGetResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="workorderFileGet">
+      <wsdl:input message="tns:workorderFileGetRequest"/>
+      <wsdl:output message="tns:workorderFileGetResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="workorderAction">
+      <wsdl:input message="tns:workorderActionRequest"/>
+      <wsdl:output message="tns:workorderActionResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="standardbinding" type="tns:operations">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="workorderGet">
+      <soap:operation soapAction="http://example.local/soap/workorderGet"/>
+      <wsdl:input><soap:body use="literal"/></wsdl:input>
+      <wsdl:output><soap:body use="literal"/></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="workorderFileGet">
+      <soap:operation soapAction="http://example.local/soap/workorderFileGet"/>
+      <wsdl:input><soap:body use="literal"/></wsdl:input>
+      <wsdl:output><soap:body use="literal"/></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="workorderAction">
+      <soap:operation soapAction="http://example.local/soap/workorderAction"/>
+      <wsdl:input><soap:body use="literal"/></wsdl:input>
+      <wsdl:output><soap:body use="literal"/></wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="SoapDemo">
+    <wsdl:port name="soapservice" binding="tns:standardbinding">
+      <soap:address location="http://markthuesen.dk/soap/index.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
