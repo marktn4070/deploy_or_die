@@ -10,6 +10,6 @@ define('WEBHOOK_BEARER','*secret*');
 
 define('MSG_QUEUE',127);
 
-define('API_URL','https://host.example/api');
+define('API_URL','https://mk.trp.solutions/takseringshjaelp/api');
 
 define('SOAP_OPERATOR','xxxxxx');

@@ -1,0 +1,2591 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://remote.server.atlight.fp.dk" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ForsiOutputService" targetNamespace="http://remote.server.atlight.fp.dk">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://remote.server.atlight.fp.dk" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://remote.server.atlight.fp.dk">
+<xs:element name="findNextReport" type="tns:findNextReport"/>
+<xs:element name="findNextReportResponse" type="tns:findNextReportResponse"/>
+<xs:element name="findReportByWideKey" type="tns:findReportByWideKey"/>
+<xs:element name="findReportByWideKeyResponse" type="tns:findReportByWideKeyResponse"/>
+<xs:element name="findReportsBySagKey" type="tns:findReportsBySagKey"/>
+<xs:element name="findReportsBySagKeyResponse" type="tns:findReportsBySagKeyResponse"/>
+<xs:element name="getAftaler" type="tns:getAftaler"/>
+<xs:element name="getAftalerResponse" type="tns:getAftalerResponse"/>
+<xs:element name="getAktivitetsLogEntries" type="tns:getAktivitetsLogEntries"/>
+<xs:element name="getAktivitetsLogEntriesResponse" type="tns:getAktivitetsLogEntriesResponse"/>
+<xs:element name="getAllAftalerForSelskab" type="tns:getAllAftalerForSelskab"/>
+<xs:element name="getAllAftalerForSelskabResponse" type="tns:getAllAftalerForSelskabResponse"/>
+<xs:element name="getAllAftalerForTaksorg" type="tns:getAllAftalerForTaksorg"/>
+<xs:element name="getAllAftalerForTaksorgResponse" type="tns:getAllAftalerForTaksorgResponse"/>
+<xs:element name="getAllHistAftalerForSelskab" type="tns:getAllHistAftalerForSelskab"/>
+<xs:element name="getAllHistAftalerForSelskabResponse" type="tns:getAllHistAftalerForSelskabResponse"/>
+<xs:element name="getAllHistAftalerForTaksorg" type="tns:getAllHistAftalerForTaksorg"/>
+<xs:element name="getAllHistAftalerForTaksorgResponse" type="tns:getAllHistAftalerForTaksorgResponse"/>
+<xs:element name="getBilag" type="tns:getBilag"/>
+<xs:element name="getBilagList" type="tns:getBilagList"/>
+<xs:element name="getBilagListResponse" type="tns:getBilagListResponse"/>
+<xs:element name="getBilagResponse" type="tns:getBilagResponse"/>
+<xs:element name="getCustomAftaler" type="tns:getCustomAftaler"/>
+<xs:element name="getCustomAftalerResponse" type="tns:getCustomAftalerResponse"/>
+<xs:element name="getFabrikater" type="tns:getFabrikater"/>
+<xs:element name="getFabrikaterResponse" type="tns:getFabrikaterResponse"/>
+<xs:element name="getLakIntegrationRapportDetaljer" type="tns:getLakIntegrationRapportDetaljer"/>
+<xs:element name="getLakIntegrationRapportDetaljerResponse" type="tns:getLakIntegrationRapportDetaljerResponse"/>
+<xs:element name="getLakIntegrationRapportPrint" type="tns:getLakIntegrationRapportPrint"/>
+<xs:element name="getLakIntegrationRapportPrintResponse" type="tns:getLakIntegrationRapportPrintResponse"/>
+<xs:element name="getLakIntegrationsRapporter" type="tns:getLakIntegrationsRapporter"/>
+<xs:element name="getLakIntegrationsRapporterResponse" type="tns:getLakIntegrationsRapporterResponse"/>
+<xs:element name="getRapportData" type="tns:getRapportData"/>
+<xs:element name="getRapportDataResponse" type="tns:getRapportDataResponse"/>
+<xs:element name="getRapportDetaljer" type="tns:getRapportDetaljer"/>
+<xs:element name="getRapportDetaljerResponse" type="tns:getRapportDetaljerResponse"/>
+<xs:element name="getRapportPdf" type="tns:getRapportPdf"/>
+<xs:element name="getRapportPdfAfsnit" type="tns:getRapportPdfAfsnit"/>
+<xs:element name="getRapportPdfAfsnitResponse" type="tns:getRapportPdfAfsnitResponse"/>
+<xs:element name="getRapportPdfResponse" type="tns:getRapportPdfResponse"/>
+<xs:element name="getRapportPrint" type="tns:getRapportPrint"/>
+<xs:element name="getRapportPrintResponse" type="tns:getRapportPrintResponse"/>
+<xs:element name="getRedirectRules" type="tns:getRedirectRules"/>
+<xs:element name="getRedirectRulesResponse" type="tns:getRedirectRulesResponse"/>
+<xs:element name="getRedirectSkadeObjekter" type="tns:getRedirectSkadeObjekter"/>
+<xs:element name="getRedirectSkadeObjekterResponse" type="tns:getRedirectSkadeObjekterResponse"/>
+<xs:element name="getRedirectSkadekategorier" type="tns:getRedirectSkadekategorier"/>
+<xs:element name="getRedirectSkadekategorierResponse" type="tns:getRedirectSkadekategorierResponse"/>
+<xs:element name="getRegresBilagList" type="tns:getRegresBilagList"/>
+<xs:element name="getRegresBilagListResponse" type="tns:getRegresBilagListResponse"/>
+<xs:element name="getRegresRapportPdf" type="tns:getRegresRapportPdf"/>
+<xs:element name="getRegresRapportPdfResponse" type="tns:getRegresRapportPdfResponse"/>
+<xs:element name="getReportRecords" type="tns:getReportRecords"/>
+<xs:element name="getReportRecordsResponse" type="tns:getReportRecordsResponse"/>
+<xs:element name="getSpecialKoder" type="tns:getSpecialKoder"/>
+<xs:element name="getSpecialKoderResponse" type="tns:getSpecialKoderResponse"/>
+<xs:element name="getTidsPlanlaegningIntegrationsRapporter" type="tns:getTidsPlanlaegningIntegrationsRapporter"/>
+<xs:element name="getTidsPlanlaegningIntegrationsRapporterResponse" type="tns:getTidsPlanlaegningIntegrationsRapporterResponse"/>
+<xs:element name="getTidsplanlaegningRapportDetaljer" type="tns:getTidsplanlaegningRapportDetaljer"/>
+<xs:element name="getTidsplanlaegningRapportDetaljerResponse" type="tns:getTidsplanlaegningRapportDetaljerResponse"/>
+<xs:element name="getTidsplanlaegningRapportPdf" type="tns:getTidsplanlaegningRapportPdf"/>
+<xs:element name="getTidsplanlaegningRapportPdfResponse" type="tns:getTidsplanlaegningRapportPdfResponse"/>
+<xs:element name="getTidsplanlaegningRapportPrint" type="tns:getTidsplanlaegningRapportPrint"/>
+<xs:element name="getTidsplanlaegningRapportPrintResponse" type="tns:getTidsplanlaegningRapportPrintResponse"/>
+<xs:element name="getValidationJobsForReport" type="tns:getValidationJobsForReport"/>
+<xs:element name="getValidationJobsForReportResponse" type="tns:getValidationJobsForReportResponse"/>
+<xs:element name="getVinAllowedFabrikater" type="tns:getVinAllowedFabrikater"/>
+<xs:element name="getVinAllowedFabrikaterResponse" type="tns:getVinAllowedFabrikaterResponse"/>
+<xs:element name="hentReparatoerAendringerAsV0" type="tns:hentReparatoerAendringerAsV0"/>
+<xs:element name="hentReparatoerAendringerAsV0Response" type="tns:hentReparatoerAendringerAsV0Response"/>
+<xs:element name="searchLakIntegrationsRapporter" type="tns:searchLakIntegrationsRapporter"/>
+<xs:element name="searchLakIntegrationsRapporterResponse" type="tns:searchLakIntegrationsRapporterResponse"/>
+<xs:element name="searchTaksatorRapporterForVK" type="tns:searchTaksatorRapporterForVK"/>
+<xs:element name="searchTaksatorRapporterForVKResponse" type="tns:searchTaksatorRapporterForVKResponse"/>
+<xs:element name="searchTidsPlanlaegningIntegrationsRapporter" type="tns:searchTidsPlanlaegningIntegrationsRapporter"/>
+<xs:element name="searchTidsPlanlaegningIntegrationsRapporterResponse" type="tns:searchTidsPlanlaegningIntegrationsRapporterResponse"/>
+<xs:element name="serverOpen" type="tns:serverOpen"/>
+<xs:element name="serverOpenResponse" type="tns:serverOpenResponse"/>
+<xs:complexType name="getFabrikater">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getFabrikaterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="Fabrikat" type="tns:fabrikat"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="fabrikat">
+<xs:sequence>
+<xs:element minOccurs="0" name="atKode" type="xs:string"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllAftalerForSelskab">
+<xs:sequence>
+<xs:element minOccurs="0" name="selskab" type="xs:string"/>
+<xs:element minOccurs="0" name="aftaleArt" type="tns:aftaleArtEnum"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllAftalerForSelskabResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aftale" type="tns:aftale"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="aftale">
+<xs:sequence>
+<xs:element minOccurs="0" name="afhentningsTidspunkt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="aftaleArt" type="tns:aftaleArtEnum"/>
+<xs:element minOccurs="0" name="aftaleArtId" type="xs:long"/>
+<xs:element minOccurs="0" name="aftaleType" type="xs:long"/>
+<xs:element minOccurs="0" name="bemaerkning" type="xs:string"/>
+<xs:element minOccurs="0" name="fabrikatKode" type="xs:string"/>
+<xs:element minOccurs="0" name="modelKode" type="xs:string"/>
+<xs:element minOccurs="0" name="oprettet" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="oprettetBruger" type="tns:oprettetBruger"/>
+<xs:element minOccurs="0" name="organisationsKode" type="xs:string"/>
+<xs:element minOccurs="0" name="organisationsType" type="tns:organisationsType"/>
+<xs:element minOccurs="0" name="sats" type="xs:float"/>
+<xs:element minOccurs="0" name="vaerksted" type="tns:vaerksted"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="oprettetBruger">
+<xs:sequence>
+<xs:element minOccurs="0" name="arbgiv" type="xs:string"/>
+<xs:element minOccurs="0" name="brugerid" type="xs:string"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+<xs:element minOccurs="0" name="taksNr" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="vaerksted">
+<xs:sequence>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="aktiv" type="xs:boolean"/>
+<xs:element minOccurs="0" name="bemaerkninger" type="xs:string"/>
+<xs:element minOccurs="0" name="bynavn" type="xs:string"/>
+<xs:element minOccurs="0" name="cvrNr" type="xs:string"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element minOccurs="0" name="forhandlerForeninger" type="xs:string"/>
+<xs:element minOccurs="0" name="intVk" type="xs:unsignedShort"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+<xs:element minOccurs="0" name="postnr" type="xs:string"/>
+<xs:element minOccurs="0" name="telefonnr" type="xs:string"/>
+<xs:element name="vkNr" type="xs:long"/>
+<xs:element minOccurs="0" name="vkType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportData">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportDataResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:remoteRapportData"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="remoteRapportData">
+<xs:sequence>
+<xs:element minOccurs="0" name="internInfo" type="xs:string"/>
+<xs:element minOccurs="0" name="remoteA0" type="tns:remoteA0"/>
+<xs:element minOccurs="0" name="remoteA1" type="tns:remoteA1"/>
+<xs:element minOccurs="0" name="remoteA2" type="tns:remoteA2"/>
+<xs:element minOccurs="0" name="remoteA3" type="tns:remoteA3"/>
+<xs:element minOccurs="0" name="remoteA4" type="tns:remoteA4"/>
+<xs:element minOccurs="0" name="remoteA5" type="tns:remoteA5"/>
+<xs:element minOccurs="0" name="remoteA6" type="tns:remoteA6"/>
+<xs:element minOccurs="0" name="remoteA7" type="tns:remoteA7"/>
+<xs:element minOccurs="0" name="remoteA8" type="tns:remoteA8"/>
+<xs:element minOccurs="0" name="remoteA9" type="tns:remoteA9"/>
+<xs:element minOccurs="0" name="remoteAA" type="tns:remoteAA"/>
+<xs:element minOccurs="0" name="remoteAB" type="tns:remoteAB"/>
+<xs:element minOccurs="0" name="remoteAC" type="tns:remoteAC"/>
+<xs:element minOccurs="0" name="remoteAD" type="tns:remoteAD"/>
+<xs:element minOccurs="0" name="remoteAE" type="tns:remoteAE"/>
+<xs:element minOccurs="0" name="remoteAM" type="tns:remoteAM"/>
+<xs:element minOccurs="0" name="remoteAP" type="tns:remoteAP"/>
+<xs:element minOccurs="0" name="remoteAQ" type="tns:remoteAQ"/>
+<xs:element minOccurs="0" name="remoteAR" type="tns:remoteAR"/>
+<xs:element minOccurs="0" name="remoteAS" type="tns:remoteAS"/>
+<xs:element minOccurs="0" name="remoteAT" type="tns:remoteAT"/>
+<xs:element minOccurs="0" name="remoteAV" type="tns:remoteAV"/>
+<xs:element minOccurs="0" name="remoteB0" type="tns:remoteB0"/>
+<xs:element minOccurs="0" name="remoteF3" type="tns:remoteF3"/>
+<xs:element minOccurs="0" name="remoteST" type="tns:remoteST"/>
+<xs:element minOccurs="0" name="remoteTB" type="tns:remoteTB"/>
+<xs:element minOccurs="0" name="remoteTS" type="tns:remoteTS"/>
+<xs:element minOccurs="0" name="remoteTT" type="tns:remoteTT"/>
+<xs:element minOccurs="0" name="remoteV0" type="tns:remoteV0"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="remoteA0">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="arbejdsgiver" type="xs:string"/>
+<xs:element minOccurs="0" name="atKlientNr" type="xs:long"/>
+<xs:element minOccurs="0" name="disponibel3" type="xs:string"/>
+<xs:element minOccurs="0" name="hasLedetekster" type="xs:string"/>
+<xs:element minOccurs="0" name="klientVersion" type="xs:string"/>
+<xs:element minOccurs="0" name="opgoerelsesSystem" type="xs:string"/>
+<xs:element minOccurs="0" name="oprindeligArbejdsgiver" type="xs:string"/>
+<xs:element minOccurs="0" name="oprindeligTaksator" type="xs:long"/>
+<xs:element minOccurs="0" name="proformaOrdreNr" type="xs:string"/>
+<xs:element minOccurs="0" name="selskab" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType abstract="true" name="remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="aar" type="xs:string"/>
+<xs:element minOccurs="0" name="loebenr" type="xs:long"/>
+<xs:element minOccurs="0" name="rapportType" type="xs:string"/>
+<xs:element minOccurs="0" name="sekvensNummer" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="remoteA1">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="andreSkader" type="xs:boolean"/>
+<xs:element minOccurs="0" name="andreSkaderTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="koeretoejTilstand" type="xs:string"/>
+<xs:element minOccurs="0" name="originalRustgaranti" type="xs:boolean"/>
+<xs:element minOccurs="0" name="phantomFabrikat" type="xs:string"/>
+<xs:element minOccurs="0" name="phantomModel" type="xs:string"/>
+<xs:element minOccurs="0" name="registreringsNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="registreringsattestModtaget" type="xs:boolean"/>
+<xs:element minOccurs="0" name="rustgaranti" type="xs:boolean"/>
+<xs:element minOccurs="0" name="rustgarantiRestAar" type="xs:int"/>
+<xs:element minOccurs="0" name="skadekode" type="xs:string"/>
+<xs:element minOccurs="0" name="skadesanmeldelseModtaget" type="xs:boolean"/>
+<xs:element minOccurs="0" name="skadetype" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone1" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone2" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone3" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone4" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone5" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone6" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone7" type="xs:string"/>
+<xs:element minOccurs="0" name="skadezone8" type="xs:string"/>
+<xs:element minOccurs="0" name="stelNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="stelNummerGenIhugges" type="xs:boolean"/>
+<xs:element minOccurs="0" name="taksatorForbeholdCharacter" type="xs:string"/>
+<xs:element minOccurs="0" name="taksererFor" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA2">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="environment" type="xs:string"/>
+<xs:element minOccurs="0" name="forsKundenr" type="xs:string"/>
+<xs:element minOccurs="0" name="forsRegnr" type="xs:string"/>
+<xs:element minOccurs="0" name="forsTelefonnr" type="xs:string"/>
+<xs:element minOccurs="0" name="forsikringstagerPostnr" type="xs:string"/>
+<xs:element minOccurs="0" name="momsRegistrering" type="xs:long"/>
+<xs:element minOccurs="0" name="policenr" type="xs:string"/>
+<xs:element minOccurs="0" name="postnr" type="xs:string"/>
+<xs:element minOccurs="0" name="selvRisiko" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA3">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="forsikringstagerAdresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="forsikringstagerAdresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="forsikringstagerNavn" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA4">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="skadelidteAdresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="skadelidteAdresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="skadelidteNavn" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA5">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="momsRegistrering" type="xs:long"/>
+<xs:element minOccurs="0" name="skadelidtePostNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="skadelidteRegistreringsNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="skadelidteTelefonNummer" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA6">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="reparatoerAdresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerAdresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerNavn" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA7">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="afsendEMail" type="xs:boolean"/>
+<xs:element minOccurs="0" name="budgiver1Beloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="budgiver1VkNr" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiver2Beloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="budgiver2VkNr" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiver3Beloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="budgiver3VkNr" type="xs:string"/>
+<xs:element minOccurs="0" name="momsBeregning" type="xs:string"/>
+<xs:element minOccurs="0" name="omregningsFaktor" type="xs:long"/>
+<xs:element minOccurs="0" name="reduktionsFaktor" type="xs:long"/>
+<xs:element minOccurs="0" name="reparationsType" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="reparatoerPostNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerTelefaxNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerTelefonNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="resterSolgtTilVkNr" type="xs:string"/>
+<xs:element minOccurs="0" name="timepris" type="xs:long"/>
+<xs:element minOccurs="0" name="timeprisOverskrevet" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA8">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="besigtigelsesKode" type="xs:string"/>
+<xs:element minOccurs="0" name="kilometerstand" type="xs:long"/>
+<xs:element minOccurs="0" name="rekvireret" type="xs:string"/>
+<xs:element minOccurs="0" name="rekvireretDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="reparationFaerdigDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="skadedato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="skadenummer" type="xs:string"/>
+<xs:element minOccurs="0" name="takseringsDato" type="xs:dateTime"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteA9">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="baandcd" type="xs:string"/>
+<xs:element minOccurs="0" name="biltelefon" type="xs:string"/>
+<xs:element minOccurs="0" name="radio" type="xs:string"/>
+<xs:element minOccurs="0" name="reparationStartDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="tyverialarm" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAA">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie1" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie2" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie3" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAB">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie4" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie5" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie6" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAC">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="aargang" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="beloebGenopbygning" type="xs:long"/>
+<xs:element minOccurs="0" name="beloebKontantErstatning" type="xs:long"/>
+<xs:element minOccurs="0" name="beloebNyVaerdiErstatning" type="xs:long"/>
+<xs:element minOccurs="0" name="beloebTotalskade" type="xs:long"/>
+<xs:element minOccurs="0" name="foersteRegistreringsdato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="genopbygning" type="xs:boolean"/>
+<xs:element minOccurs="0" name="handelsvaerdi" type="xs:long"/>
+<xs:element minOccurs="0" name="kontantErstatning" type="xs:boolean"/>
+<xs:element minOccurs="0" name="momsAfErstatning" type="xs:string"/>
+<xs:element minOccurs="0" name="nummerPladeType" type="xs:string"/>
+<xs:element minOccurs="0" name="nummerPladerFjernet" type="xs:boolean"/>
+<xs:element minOccurs="0" name="nyVaerdi" type="xs:long"/>
+<xs:element minOccurs="0" name="nyVaerdiErstatning" type="xs:boolean"/>
+<xs:element minOccurs="0" name="reparationOver55" type="xs:boolean"/>
+<xs:element minOccurs="0" name="reparationsgraense" type="xs:long"/>
+<xs:element minOccurs="0" name="restGaeld" type="xs:long"/>
+<xs:element minOccurs="0" name="restGaeldBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="resterTilhoererSelskabCharacter" type="xs:string"/>
+<xs:element minOccurs="0" name="skalGenbesigtiges" type="xs:boolean"/>
+<xs:element minOccurs="0" name="straksafregning" type="xs:string"/>
+<xs:element minOccurs="0" name="toldSag" type="xs:string"/>
+<xs:element minOccurs="0" name="totalskade" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAD">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie7" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie8" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie9" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAE">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie10" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie11" type="xs:string"/>
+<xs:element minOccurs="0" name="skadeBemaerkningLinie12" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAM">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="nummerpladeBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="synsgebyr" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAP">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="budgiverByNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiverNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiverPostNr" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAQ">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="budgiverByNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiverNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiverPostNr" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAR">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="budgiverByNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiverNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="budgiverPostNr" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAS">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="bankRegNr" type="xs:long"/>
+<xs:element minOccurs="0" name="giroNr" type="xs:long"/>
+<xs:element minOccurs="0" name="kontoNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="pbsNr" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAT">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="beloebsModtagerAdresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="beloebsModtagerAdresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="beloebsModtagerNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="beloebsModtagerPostNummer" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteAV">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="fabrikatTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="modelTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="udstyrvariantTekst3" type="xs:string"/>
+<xs:element minOccurs="0" name="udstyrvariantTekst4" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteB0">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="afsendEMail" type="xs:boolean"/>
+<xs:element minOccurs="0" name="annulleringsmarkering" type="xs:string"/>
+<xs:element minOccurs="0" name="antalInternInfo" type="xs:long"/>
+<xs:element minOccurs="0" name="arbejdsgiver" type="xs:string"/>
+<xs:element minOccurs="0" name="atKlientNr" type="xs:long"/>
+<xs:element minOccurs="0" name="godkendelseDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="klientVersion" type="xs:string"/>
+<xs:element minOccurs="0" name="oprindeligArbejdsgiver" type="xs:string"/>
+<xs:element minOccurs="0" name="oprindeligTaksator" type="xs:long"/>
+<xs:element minOccurs="0" name="proformaOrdreNr" type="xs:string"/>
+<xs:element minOccurs="0" name="selskab" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteF3">
+<xs:sequence>
+<xs:element minOccurs="0" name="cvrNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="ejerAdresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="ejerAdresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="ejerByNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="ejerNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="ejerPostNummer" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="remoteST">
+<xs:sequence>
+<xs:element minOccurs="0" name="beloeb1" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb2" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb3" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb4" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb5" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb6" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb7" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb8" type="xs:long"/>
+<xs:element minOccurs="0" name="beloeb9" type="xs:long"/>
+<xs:element minOccurs="0" name="erstatningsbeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="text" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="remoteTB">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="aePrTime" type="xs:long"/>
+<xs:element minOccurs="0" name="fabrikatKode" type="xs:string"/>
+<xs:element minOccurs="0" name="fabrikatTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="modelKode" type="xs:string"/>
+<xs:element minOccurs="0" name="modelTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="undertypeKode" type="xs:string"/>
+<xs:element minOccurs="0" name="undertypeTekst" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteTS">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="arbejdsloenIAltBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="lakIAltBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="miljoeOmkostninerBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="momsBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="nytForGammeltBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="reservedeleIAltBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="selvRisikoBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="totalBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="totalBeloebMedMoms" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteTT">
+<xs:complexContent>
+<xs:extension base="tns:remoteAbstractRecordWithKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="differenceBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="fradragArbejdsLoenBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="fradragArbejdsLoenSats" type="xs:decimal"/>
+<xs:element minOccurs="0" name="fradragReservedelsSum" type="xs:long"/>
+<xs:element minOccurs="0" name="fradragReservedelsSumSats" type="xs:decimal"/>
+<xs:element minOccurs="0" name="fradragTotalBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="momsAfDifferenceBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="nummerpladeBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="synsGebyrBeloeb" type="xs:long"/>
+<xs:element minOccurs="0" name="totalBeloebMedMomsInclGebyrerExclSelvrisiko" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="remoteV0">
+<xs:sequence>
+<xs:element minOccurs="0" name="aktiv" type="xs:boolean"/>
+<xs:element minOccurs="0" name="bemaerkninger" type="xs:string"/>
+<xs:element minOccurs="0" name="betalingsModtagendeReparatoer" type="xs:long"/>
+<xs:element minOccurs="0" name="cvrNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="emailAdresse" type="xs:string"/>
+<xs:element minOccurs="0" name="environment" type="xs:string"/>
+<xs:element minOccurs="0" name="forhandlerForeninger" type="xs:string"/>
+<xs:element minOccurs="0" name="giroNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="intVk" type="xs:string"/>
+<xs:element minOccurs="0" name="operation" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerAdresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerAdresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerBankKontonr" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerBankRegNr" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerByNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="reparatoerPostNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerTelefaxNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="reparatoerTelefonNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="transaktionsKode" type="xs:long"/>
+<xs:element minOccurs="0" name="vkType" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLakIntegrationRapportDetaljer">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLakIntegrationRapportDetaljerResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="lakRapportDetaljer" type="tns:lakRapportDetaljer"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="lakRapportDetaljer">
+<xs:sequence>
+<xs:element minOccurs="0" name="aePrTime" type="xs:long"/>
+<xs:element minOccurs="0" name="fabrikatModelTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="kilometerStand" type="xs:long"/>
+<xs:element minOccurs="0" name="lakArbejde" type="xs:double"/>
+<xs:element minOccurs="0" name="lakIaltTotal" type="xs:double"/>
+<xs:element minOccurs="0" name="lakIndex" type="xs:long"/>
+<xs:element minOccurs="0" name="lakMaterialer" type="xs:double"/>
+<xs:element minOccurs="0" name="lakSektionPdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="lakTimepris" type="xs:double"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="lakeringsMetode" nillable="true" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="lakeringsdel" nillable="true" type="tns:lakeringsdel"/>
+<xs:element minOccurs="0" name="miljoeLakMaterialerProcent" type="xs:long"/>
+<xs:element minOccurs="0" name="rapport" type="tns:rapportInformation"/>
+<xs:element minOccurs="0" name="regnNr" type="xs:string"/>
+<xs:element minOccurs="0" name="startTidMetalDele" type="xs:double"/>
+<xs:element minOccurs="0" name="startTidPlastDele" type="xs:double"/>
+<xs:element minOccurs="0" name="startTidSpot" type="xs:double"/>
+<xs:element minOccurs="0" name="startTidToFarve" type="xs:double"/>
+<xs:element minOccurs="0" name="totalskade" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="lakeringsdel">
+<xs:sequence>
+<xs:element minOccurs="0" name="arbejdsEnheder" type="xs:double"/>
+<xs:element minOccurs="0" name="arbejdsLoen" type="xs:double"/>
+<xs:element minOccurs="0" name="lakeringsDel" type="xs:string"/>
+<xs:element minOccurs="0" name="lakeringsMetode" type="xs:string"/>
+<xs:element minOccurs="0" name="ledenr" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rapportInformation">
+<xs:sequence>
+<xs:element minOccurs="0" name="godkendelsesTidspunkt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+<xs:element minOccurs="0" name="rapportVkCvrNr" type="xs:long"/>
+<xs:element minOccurs="0" name="rapportVkNr" type="xs:long"/>
+<xs:element minOccurs="0" name="regNr" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="tns:rapportState"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportPdf">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportPdfResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportPdf" type="xs:base64Binary"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCustomAftaler">
+<xs:sequence>
+<xs:element minOccurs="0" name="vaerkstedsNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="selskabsKode" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCustomAftalerResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="CustomAftale" type="tns:egnAttribut"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="egnAttribut">
+<xs:sequence>
+<xs:element minOccurs="0" name="aftaleTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="oprettet" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="oprettetBruger" type="tns:oprettetBruger"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="searchLakIntegrationsRapporter">
+<xs:sequence>
+<xs:element minOccurs="0" name="fraDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="tilDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="vkNr" type="xs:long"/>
+<xs:element minOccurs="0" name="cvrNr" type="xs:long"/>
+<xs:element minOccurs="0" name="regNr" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="searchLakIntegrationsRapporterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="lakIntegrationsRapporter" type="tns:rapportInformation"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRedirectSkadeObjekter">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getRedirectSkadeObjekterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:redirectSkadeObjekt"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="redirectSkadeObjekt">
+<xs:sequence>
+<xs:element name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getValidationJobsForReport">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+<xs:element minOccurs="0" name="type" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getValidationJobsForReportResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ValidationJob" type="tns:validationJob"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="validationJob">
+<xs:sequence>
+<xs:element minOccurs="0" name="behandletTid" type="xs:dateTime"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="externalValidations" nillable="true" type="tns:validationResult"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="opretTid" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="validationResult">
+<xs:sequence>
+<xs:element minOccurs="0" name="data" type="xs:string"/>
+<xs:element minOccurs="0" name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="type" type="tns:validationResultType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAftaler">
+<xs:sequence>
+<xs:element name="vaerkstedsNummer" type="xs:long"/>
+<xs:element minOccurs="0" name="selskab" type="xs:string"/>
+<xs:element minOccurs="0" name="taksatorOrganisation" type="xs:string"/>
+<xs:element minOccurs="0" name="aftaleType" type="tns:aftaleArtEnum"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAftalerResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aftale" type="tns:aftale"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findReportByWideKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="tns:rapportInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rapportInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="arbGiv" type="xs:string"/>
+<xs:element minOccurs="0" name="godkTid" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="oprArbGiv" type="xs:string"/>
+<xs:element minOccurs="0" name="oprTaksNr" type="xs:long"/>
+<xs:element minOccurs="0" name="rappId" type="xs:long"/>
+<xs:element minOccurs="0" name="rappNr" type="xs:long"/>
+<xs:element minOccurs="0" name="rappType" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="taksFor" type="xs:string"/>
+<xs:element minOccurs="0" name="taksNr" type="xs:long"/>
+<xs:element minOccurs="0" name="vkNr" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findReportByWideKeyResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:rapportInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAktivitetsLogEntries">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportInfo" type="tns:rapportInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAktivitetsLogEntriesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aktivitetsLog" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRedirectSkadekategorier">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getRedirectSkadekategorierResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:redirectSkadeKategori"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="redirectSkadeKategori">
+<xs:sequence>
+<xs:element name="id" type="xs:long"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportPdfAfsnit">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportPdfAfsnitResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportPdfAfsnit" type="tns:rapportPdfAfsnit"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rapportPdfAfsnit">
+<xs:sequence>
+<xs:element minOccurs="0" name="arbejdbeskrivelsePdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="fakturaPdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="forsidePdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="infobladPdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="kontrolbladPdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="lakPdf" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="reservedelePdf" type="xs:base64Binary"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="searchTidsPlanlaegningIntegrationsRapporter">
+<xs:sequence>
+<xs:element minOccurs="0" name="fraDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="tilDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="vkNr" type="xs:long"/>
+<xs:element minOccurs="0" name="cvrNr" type="xs:long"/>
+<xs:element minOccurs="0" name="regNr" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="searchTidsPlanlaegningIntegrationsRapporterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tidsPlanlaegningIntegrationsRapporter" type="tns:rapportInformation"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="searchTaksatorRapporterForVK">
+<xs:sequence>
+<xs:element minOccurs="0" name="fraDato" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="tilDato" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="searchTaksatorRapporterForVKResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="rapporter" type="tns:rapportInformation"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRegresRapportPdf">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRegresRapportPdfResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="regresRapportPdf" type="xs:base64Binary"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getReportRecords">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportInfo" type="tns:rapportInfo"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="recordIds" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getReportRecordsResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="reportRecord" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="hentReparatoerAendringerAsV0">
+<xs:sequence>
+<xs:element minOccurs="0" name="fraDato" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="hentReparatoerAendringerAsV0Response">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="voRecord" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRedirectRules">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getRedirectRulesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:redirectRule"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="redirectRule">
+<xs:sequence>
+<xs:element minOccurs="0" name="brugerId" type="xs:string"/>
+<xs:element minOccurs="0" name="ruleText" type="xs:string"/>
+<xs:element name="sortNumber" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportDetaljer">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportDetaljerResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportDetaljer" type="tns:rapportDetaljer"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="rapportDetaljer">
+<xs:sequence>
+<xs:element name="aargang" type="xs:int"/>
+<xs:element minOccurs="0" name="adresse1" type="xs:string"/>
+<xs:element minOccurs="0" name="adresse2" type="xs:string"/>
+<xs:element minOccurs="0" name="aePrTime" type="xs:long"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aktiveredeSpecialKoder" nillable="true" type="tns:specialKode"/>
+<xs:element minOccurs="0" name="arbejdsloenIaltTotal" type="xs:double"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="bemaerkningsLinie" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="bynavn" type="xs:string"/>
+<xs:element minOccurs="0" name="diverseIalt" type="xs:double"/>
+<xs:element minOccurs="0" name="fabrikatKode" type="xs:string"/>
+<xs:element minOccurs="0" name="fabrikatModelTekst" type="xs:string"/>
+<xs:element minOccurs="0" name="fakturaLakTimepris" type="xs:double"/>
+<xs:element minOccurs="0" name="fakturaTimepris" type="xs:double"/>
+<xs:element minOccurs="0" name="fantomOpgoerelse" type="xs:boolean"/>
+<xs:element minOccurs="0" name="internOrdreNr" type="xs:string"/>
+<xs:element minOccurs="0" name="kilometerStand" type="xs:long"/>
+<xs:element minOccurs="0" name="lakArbejde" type="xs:double"/>
+<xs:element minOccurs="0" name="lakIaltTotal" type="xs:double"/>
+<xs:element minOccurs="0" name="lakMaterialer" type="xs:double"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="lakeringsdel" nillable="true" type="tns:lakeringsdel"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+<xs:element minOccurs="0" name="nrPladeBeloeb" type="xs:double"/>
+<xs:element minOccurs="0" name="nummerpladeType" type="xs:string"/>
+<xs:element minOccurs="0" name="policeNr" type="xs:string"/>
+<xs:element minOccurs="0" name="postNr" type="xs:string"/>
+<xs:element minOccurs="0" name="proformaOrdreNr" type="xs:string"/>
+<xs:element minOccurs="0" name="rapport" type="tns:rapportInformation"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="rapporterISag" nillable="true" type="tns:rapportInformation"/>
+<xs:element minOccurs="0" name="regnNr" type="xs:string"/>
+<xs:element minOccurs="0" name="rekvireringsTidspunkt" type="xs:dateTime"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="reservedel" nillable="true" type="tns:reservedel"/>
+<xs:element minOccurs="0" name="reservedeleIaltTotal" type="xs:double"/>
+<xs:element minOccurs="0" name="stelNr" type="xs:string"/>
+<xs:element minOccurs="0" name="synsgebyr" type="xs:double"/>
+<xs:element minOccurs="0" name="taksatorRappNr" type="xs:string"/>
+<xs:element minOccurs="0" name="takseresFor" type="xs:string"/>
+<xs:element minOccurs="0" name="telefonNr" type="xs:string"/>
+<xs:element minOccurs="0" name="totalBeloebUdenMoms" type="xs:double"/>
+<xs:element minOccurs="0" name="totalskade" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="specialKode">
+<xs:sequence>
+<xs:element name="code" type="xs:int"/>
+<xs:element minOccurs="0" name="description" type="xs:string"/>
+<xs:element minOccurs="0" name="type" type="tns:specialkodeType"/>
+<xs:element minOccurs="0" name="value" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="reservedel">
+<xs:sequence>
+<xs:element minOccurs="0" name="betegnelse" type="xs:string"/>
+<xs:element minOccurs="0" name="ledenr" type="xs:string"/>
+<xs:element minOccurs="0" name="reservedelsAntal" type="xs:double"/>
+<xs:element minOccurs="0" name="reservedelsAntalEnhed" type="tns:reservedelsAntalEnhed"/>
+<xs:element minOccurs="0" name="reservedelsNummer" type="xs:string"/>
+<xs:element minOccurs="0" name="reservedelsPris" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="serverOpen">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="serverOpenResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllAftalerForTaksorg">
+<xs:sequence>
+<xs:element minOccurs="0" name="taksatorOrganisation" type="xs:string"/>
+<xs:element minOccurs="0" name="aftaleArt" type="tns:aftaleArtEnum"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllAftalerForTaksorgResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aftale" type="tns:aftale"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLakIntegrationRapportPrint">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLakIntegrationRapportPrintResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="LakIntegrationRapportPrint" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getBilagList">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+<xs:element minOccurs="0" name="asThumbnail" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getBilagListResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="bilag" type="tns:bilag"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bilag">
+<xs:sequence>
+<xs:element minOccurs="0" name="bemaerkning" type="xs:string"/>
+<xs:element minOccurs="0" name="data" type="xs:base64Binary"/>
+<xs:element minOccurs="0" name="navn" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getBilag">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+<xs:element minOccurs="0" name="bilagNavn" type="xs:string"/>
+<xs:element minOccurs="0" name="asThumbnail" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getBilagResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="bilag" type="tns:bilag"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllHistAftalerForTaksorg">
+<xs:sequence>
+<xs:element minOccurs="0" name="taksatorOrganisation" type="xs:string"/>
+<xs:element minOccurs="0" name="aftaleArt" type="tns:aftaleArtEnum"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllHistAftalerForTaksorgResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aftaleHist" type="tns:aftaleHist"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="aftaleHist">
+<xs:sequence>
+<xs:element minOccurs="0" name="afhentningsTidspunkt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="aftaleArt" type="tns:aftaleArtEnum"/>
+<xs:element minOccurs="0" name="aftaleArtId" type="xs:long"/>
+<xs:element minOccurs="0" name="aftaleType" type="xs:long"/>
+<xs:element minOccurs="0" name="bemaerkning" type="xs:string"/>
+<xs:element minOccurs="0" name="fabrikatKode" type="xs:string"/>
+<xs:element minOccurs="0" name="modelKode" type="xs:string"/>
+<xs:element minOccurs="0" name="ophoert" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="oprettet" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="oprettetBruger" type="tns:oprettetBruger"/>
+<xs:element minOccurs="0" name="organisationsKode" type="xs:string"/>
+<xs:element minOccurs="0" name="organisationsType" type="tns:organisationsType"/>
+<xs:element minOccurs="0" name="sats" type="xs:string"/>
+<xs:element minOccurs="0" name="vaerksted" type="tns:vaerksted"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getLakIntegrationsRapporter">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getLakIntegrationsRapporterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="lakIntegrationsRapporter" type="tns:rapportInformation"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportPrint">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRapportPrintResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportPrint" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRegresBilagList">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+<xs:element minOccurs="0" name="asThumbnail" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getRegresBilagListResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="bilag" type="tns:bilag"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getSpecialKoder">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getSpecialKoderResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="SpecialKode" type="tns:specialKode"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findReportsBySagKey">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:long"/>
+<xs:element minOccurs="0" name="arg2" type="xs:long"/>
+<xs:element name="arg3" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findReportsBySagKeyResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:rapportInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsplanlaegningRapportDetaljer">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsplanlaegningRapportDetaljerResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="tidsplanlaegningRapportDetaljer" type="tns:rapportDetaljer"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getVinAllowedFabrikater">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getVinAllowedFabrikaterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="VinAllowedFabrikat" type="tns:fabrikat"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsplanlaegningRapportPdf">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsplanlaegningRapportPdfResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="tidsplanlaegningRapportPdf" type="xs:base64Binary"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findNextReport">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg1" type="xs:string"/>
+<xs:element minOccurs="0" name="arg2" type="tns:rapportInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="findNextReportResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:rapportInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllHistAftalerForSelskab">
+<xs:sequence>
+<xs:element minOccurs="0" name="selskab" type="xs:string"/>
+<xs:element minOccurs="0" name="aftaleArt" type="tns:aftaleArtEnum"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getAllHistAftalerForSelskabResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="aftaleHist" type="tns:aftaleHist"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsplanlaegningRapportPrint">
+<xs:sequence>
+<xs:element minOccurs="0" name="rapportNoegle" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsplanlaegningRapportPrintResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="tidsplanlaegningRapportPrint" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getTidsPlanlaegningIntegrationsRapporter">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="getTidsPlanlaegningIntegrationsRapporterResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="tidsPlanlaegningIntegrationsRapporter" type="tns:rapportInformation"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="aftaleArtEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="STAMDATA"/>
+<xs:enumeration value="PERSONBIL"/>
+<xs:enumeration value="LASTBIL"/>
+<xs:enumeration value="MOTORCYKEL"/>
+<xs:enumeration value="DIVERSE"/>
+<xs:enumeration value="GLAS"/>
+<xs:enumeration value="ENTREPRENOER"/>
+<xs:enumeration value="LANDBRUG"/>
+<xs:enumeration value="CAMPINGVOGN"/>
+<xs:enumeration value="BYGNING"/>
+<xs:enumeration value="LOESOERE"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="organisationsType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SELSKAB"/>
+<xs:enumeration value="TAKSATORORGANISATION"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="rapportState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="GK"/>
+<xs:enumeration value="AL"/>
+<xs:enumeration value="FO"/>
+<xs:enumeration value="AD"/>
+<xs:enumeration value="XX"/>
+<xs:enumeration value="BU"/>
+<xs:enumeration value="ONE_G"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="validationResultType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AUDANET_RULESCHECK_XML"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="specialkodeType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PERCENT"/>
+<xs:enumeration value="AMOUNT"/>
+<xs:enumeration value="INDEX"/>
+<xs:enumeration value="WORKUNIT"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="reservedelsAntalEnhed">
+<xs:restriction base="xs:string">
+<xs:enumeration value="INGEN"/>
+<xs:enumeration value="STK"/>
+<xs:enumeration value="LTR"/>
+<xs:enumeration value="M"/>
+<xs:enumeration value="KG"/>
+<xs:enumeration value="UKENDT"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="WSServerCheckedException" type="tns:WSServerCheckedException"/>
+<xs:complexType name="WSServerCheckedException">
+<xs:sequence>
+<xs:element name="callId" nillable="true" type="xs:string"/>
+<xs:element name="detail" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="WSParameterCheckedException" type="tns:WSParameterCheckedException"/>
+<xs:complexType name="WSParameterCheckedException">
+<xs:sequence>
+<xs:element name="callId" nillable="true" type="xs:string"/>
+<xs:element name="detail" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="WSSecurityCheckedException" type="tns:WSSecurityCheckedException"/>
+<xs:complexType name="WSSecurityCheckedException">
+<xs:sequence>
+<xs:element name="callId" nillable="true" type="xs:string"/>
+<xs:element name="detail" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getRapportDetaljerResponse">
+    <wsdl:part element="tns:getRapportDetaljerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFabrikater">
+    <wsdl:part element="tns:getFabrikater" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLakIntegrationRapportDetaljerResponse">
+    <wsdl:part element="tns:getLakIntegrationRapportDetaljerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBilagListResponse">
+    <wsdl:part element="tns:getBilagListResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllAftalerForSelskab">
+    <wsdl:part element="tns:getAllAftalerForSelskab" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAktivitetsLogEntriesResponse">
+    <wsdl:part element="tns:getAktivitetsLogEntriesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAftalerResponse">
+    <wsdl:part element="tns:getAftalerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchTidsPlanlaegningIntegrationsRapporterResponse">
+    <wsdl:part element="tns:searchTidsPlanlaegningIntegrationsRapporterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchLakIntegrationsRapporter">
+    <wsdl:part element="tns:searchLakIntegrationsRapporter" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRedirectSkadeObjekter">
+    <wsdl:part element="tns:getRedirectSkadeObjekter" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findReportByWideKeyResponse">
+    <wsdl:part element="tns:findReportByWideKeyResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportPdfResponse">
+    <wsdl:part element="tns:getRapportPdfResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVinAllowedFabrikaterResponse">
+    <wsdl:part element="tns:getVinAllowedFabrikaterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsplanlaegningRapportPrintResponse">
+    <wsdl:part element="tns:getTidsplanlaegningRapportPrintResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAktivitetsLogEntries">
+    <wsdl:part element="tns:getAktivitetsLogEntries" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WSSecurityCheckedException">
+    <wsdl:part element="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFabrikaterResponse">
+    <wsdl:part element="tns:getFabrikaterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportPdfAfsnit">
+    <wsdl:part element="tns:getRapportPdfAfsnit" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLakIntegrationRapportPrintResponse">
+    <wsdl:part element="tns:getLakIntegrationRapportPrintResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportPdfAfsnitResponse">
+    <wsdl:part element="tns:getRapportPdfAfsnitResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchTaksatorRapporterForVK">
+    <wsdl:part element="tns:searchTaksatorRapporterForVK" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRedirectRules">
+    <wsdl:part element="tns:getRedirectRules" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WSParameterCheckedException">
+    <wsdl:part element="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllAftalerForTaksorgResponse">
+    <wsdl:part element="tns:getAllAftalerForTaksorgResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsplanlaegningRapportDetaljerResponse">
+    <wsdl:part element="tns:getTidsplanlaegningRapportDetaljerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="serverOpen">
+    <wsdl:part element="tns:serverOpen" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportPrintResponse">
+    <wsdl:part element="tns:getRapportPrintResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBilagList">
+    <wsdl:part element="tns:getBilagList" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBilag">
+    <wsdl:part element="tns:getBilag" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getValidationJobsForReportResponse">
+    <wsdl:part element="tns:getValidationJobsForReportResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSpecialKoder">
+    <wsdl:part element="tns:getSpecialKoder" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsplanlaegningRapportDetaljer">
+    <wsdl:part element="tns:getTidsplanlaegningRapportDetaljer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVinAllowedFabrikater">
+    <wsdl:part element="tns:getVinAllowedFabrikater" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findNextReport">
+    <wsdl:part element="tns:findNextReport" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllHistAftalerForSelskab">
+    <wsdl:part element="tns:getAllHistAftalerForSelskab" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsplanlaegningRapportPrint">
+    <wsdl:part element="tns:getTidsplanlaegningRapportPrint" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsPlanlaegningIntegrationsRapporter">
+    <wsdl:part element="tns:getTidsPlanlaegningIntegrationsRapporter" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegresBilagListResponse">
+    <wsdl:part element="tns:getRegresBilagListResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReportRecordsResponse">
+    <wsdl:part element="tns:getReportRecordsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLakIntegrationsRapporterResponse">
+    <wsdl:part element="tns:getLakIntegrationsRapporterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportData">
+    <wsdl:part element="tns:getRapportData" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentReparatoerAendringerAsV0Response">
+    <wsdl:part element="tns:hentReparatoerAendringerAsV0Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLakIntegrationRapportDetaljer">
+    <wsdl:part element="tns:getLakIntegrationRapportDetaljer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportPdf">
+    <wsdl:part element="tns:getRapportPdf" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomAftaler">
+    <wsdl:part element="tns:getCustomAftaler" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllHistAftalerForTaksorgResponse">
+    <wsdl:part element="tns:getAllHistAftalerForTaksorgResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getValidationJobsForReport">
+    <wsdl:part element="tns:getValidationJobsForReport" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAftaler">
+    <wsdl:part element="tns:getAftaler" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRedirectSkadekategorierResponse">
+    <wsdl:part element="tns:getRedirectSkadekategorierResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllAftalerForSelskabResponse">
+    <wsdl:part element="tns:getAllAftalerForSelskabResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findReportByWideKey">
+    <wsdl:part element="tns:findReportByWideKey" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegresRapportPdfResponse">
+    <wsdl:part element="tns:getRegresRapportPdfResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllHistAftalerForSelskabResponse">
+    <wsdl:part element="tns:getAllHistAftalerForSelskabResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRedirectSkadekategorier">
+    <wsdl:part element="tns:getRedirectSkadekategorier" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCustomAftalerResponse">
+    <wsdl:part element="tns:getCustomAftalerResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchTidsPlanlaegningIntegrationsRapporter">
+    <wsdl:part element="tns:searchTidsPlanlaegningIntegrationsRapporter" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegresRapportPdf">
+    <wsdl:part element="tns:getRegresRapportPdf" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReportRecords">
+    <wsdl:part element="tns:getReportRecords" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="hentReparatoerAendringerAsV0">
+    <wsdl:part element="tns:hentReparatoerAendringerAsV0" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportDataResponse">
+    <wsdl:part element="tns:getRapportDataResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findReportsBySagKeyResponse">
+    <wsdl:part element="tns:findReportsBySagKeyResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportDetaljer">
+    <wsdl:part element="tns:getRapportDetaljer" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findNextReportResponse">
+    <wsdl:part element="tns:findNextReportResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchTaksatorRapporterForVKResponse">
+    <wsdl:part element="tns:searchTaksatorRapporterForVKResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllAftalerForTaksorg">
+    <wsdl:part element="tns:getAllAftalerForTaksorg" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLakIntegrationRapportPrint">
+    <wsdl:part element="tns:getLakIntegrationRapportPrint" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRedirectSkadeObjekterResponse">
+    <wsdl:part element="tns:getRedirectSkadeObjekterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllHistAftalerForTaksorg">
+    <wsdl:part element="tns:getAllHistAftalerForTaksorg" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WSServerCheckedException">
+    <wsdl:part element="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="serverOpenResponse">
+    <wsdl:part element="tns:serverOpenResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLakIntegrationsRapporter">
+    <wsdl:part element="tns:getLakIntegrationsRapporter" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRapportPrint">
+    <wsdl:part element="tns:getRapportPrint" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRegresBilagList">
+    <wsdl:part element="tns:getRegresBilagList" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSpecialKoderResponse">
+    <wsdl:part element="tns:getSpecialKoderResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findReportsBySagKey">
+    <wsdl:part element="tns:findReportsBySagKey" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsplanlaegningRapportPdf">
+    <wsdl:part element="tns:getTidsplanlaegningRapportPdf" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsPlanlaegningIntegrationsRapporterResponse">
+    <wsdl:part element="tns:getTidsPlanlaegningIntegrationsRapporterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRedirectRulesResponse">
+    <wsdl:part element="tns:getRedirectRulesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBilagResponse">
+    <wsdl:part element="tns:getBilagResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTidsplanlaegningRapportPdfResponse">
+    <wsdl:part element="tns:getTidsplanlaegningRapportPdfResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchLakIntegrationsRapporterResponse">
+    <wsdl:part element="tns:searchLakIntegrationsRapporterResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ForsiOutputWebService">
+    <wsdl:operation name="getFabrikater">
+      <wsdl:input message="tns:getFabrikater" name="getFabrikater">
+    </wsdl:input>
+      <wsdl:output message="tns:getFabrikaterResponse" name="getFabrikaterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAftalerForSelskab">
+<wsdl:documentation>Denne metode kan bruges af brugere med rollen TAKSMANAGER(Cheftaksator). Metoden returnerer en liste af alle de aftaler det angivne selskab har med værkstederne</wsdl:documentation>
+      <wsdl:input message="tns:getAllAftalerForSelskab" name="getAllAftalerForSelskab">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllAftalerForSelskabResponse" name="getAllAftalerForSelskabResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportData">
+<wsdl:documentation>Denne metode kan kaldes af brugere med rollen taks eller sagsb, til at hente struktureret rapportdata.</wsdl:documentation>
+      <wsdl:input message="tns:getRapportData" name="getRapportData">
+    </wsdl:input>
+      <wsdl:output message="tns:getRapportDataResponse" name="getRapportDataResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLakIntegrationRapportDetaljer">
+      <wsdl:input message="tns:getLakIntegrationRapportDetaljer" name="getLakIntegrationRapportDetaljer">
+    </wsdl:input>
+      <wsdl:output message="tns:getLakIntegrationRapportDetaljerResponse" name="getLakIntegrationRapportDetaljerResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportPdf">
+      <wsdl:input message="tns:getRapportPdf" name="getRapportPdf">
+    </wsdl:input>
+      <wsdl:output message="tns:getRapportPdfResponse" name="getRapportPdfResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomAftaler">
+      <wsdl:input message="tns:getCustomAftaler" name="getCustomAftaler">
+    </wsdl:input>
+      <wsdl:output message="tns:getCustomAftalerResponse" name="getCustomAftalerResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchLakIntegrationsRapporter">
+      <wsdl:input message="tns:searchLakIntegrationsRapporter" name="searchLakIntegrationsRapporter">
+    </wsdl:input>
+      <wsdl:output message="tns:searchLakIntegrationsRapporterResponse" name="searchLakIntegrationsRapporterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedirectSkadeObjekter">
+<wsdl:documentation>Denne metode kan kaldes af brugere med rollen RedirectAdmin. Metoden giver en liste af RedirectSkadeObjekt og kan benyttes til at afgøre hvad koderne i hver enkelt regel fra getRedirectRules betyder.</wsdl:documentation>
+      <wsdl:input message="tns:getRedirectSkadeObjekter" name="getRedirectSkadeObjekter">
+    </wsdl:input>
+      <wsdl:output message="tns:getRedirectSkadeObjekterResponse" name="getRedirectSkadeObjekterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValidationJobsForReport">
+      <wsdl:input message="tns:getValidationJobsForReport" name="getValidationJobsForReport">
+    </wsdl:input>
+      <wsdl:output message="tns:getValidationJobsForReportResponse" name="getValidationJobsForReportResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAftaler">
+      <wsdl:input message="tns:getAftaler" name="getAftaler">
+    </wsdl:input>
+      <wsdl:output message="tns:getAftalerResponse" name="getAftalerResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findReportByWideKey">
+      <wsdl:input message="tns:findReportByWideKey" name="findReportByWideKey">
+    </wsdl:input>
+      <wsdl:output message="tns:findReportByWideKeyResponse" name="findReportByWideKeyResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAktivitetsLogEntries">
+      <wsdl:input message="tns:getAktivitetsLogEntries" name="getAktivitetsLogEntries">
+    </wsdl:input>
+      <wsdl:output message="tns:getAktivitetsLogEntriesResponse" name="getAktivitetsLogEntriesResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedirectSkadekategorier">
+<wsdl:documentation>Denne metode kan kaldes af brugere med rollen RedirectAdmin. Metoden giver en liste af RedirectSkadeKategori og kan benyttes til at afgøre hvad koderne i hver enkelt regel fra getRedirectRules betyder.</wsdl:documentation>
+      <wsdl:input message="tns:getRedirectSkadekategorier" name="getRedirectSkadekategorier">
+    </wsdl:input>
+      <wsdl:output message="tns:getRedirectSkadekategorierResponse" name="getRedirectSkadekategorierResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportPdfAfsnit">
+      <wsdl:input message="tns:getRapportPdfAfsnit" name="getRapportPdfAfsnit">
+    </wsdl:input>
+      <wsdl:output message="tns:getRapportPdfAfsnitResponse" name="getRapportPdfAfsnitResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchTidsPlanlaegningIntegrationsRapporter">
+      <wsdl:input message="tns:searchTidsPlanlaegningIntegrationsRapporter" name="searchTidsPlanlaegningIntegrationsRapporter">
+    </wsdl:input>
+      <wsdl:output message="tns:searchTidsPlanlaegningIntegrationsRapporterResponse" name="searchTidsPlanlaegningIntegrationsRapporterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchTaksatorRapporterForVK">
+      <wsdl:input message="tns:searchTaksatorRapporterForVK" name="searchTaksatorRapporterForVK">
+    </wsdl:input>
+      <wsdl:output message="tns:searchTaksatorRapporterForVKResponse" name="searchTaksatorRapporterForVKResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegresRapportPdf">
+      <wsdl:input message="tns:getRegresRapportPdf" name="getRegresRapportPdf">
+    </wsdl:input>
+      <wsdl:output message="tns:getRegresRapportPdfResponse" name="getRegresRapportPdfResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportRecords">
+      <wsdl:input message="tns:getReportRecords" name="getReportRecords">
+    </wsdl:input>
+      <wsdl:output message="tns:getReportRecordsResponse" name="getReportRecordsResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentReparatoerAendringerAsV0">
+      <wsdl:input message="tns:hentReparatoerAendringerAsV0" name="hentReparatoerAendringerAsV0">
+    </wsdl:input>
+      <wsdl:output message="tns:hentReparatoerAendringerAsV0Response" name="hentReparatoerAendringerAsV0Response">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedirectRules">
+<wsdl:documentation>Denne metode kan kaldes af brugere med rollen RedirectAdmin. Metoden giver en liste af RedirectRegler for det selskab, der er registreret som brugerens arbejdsgiver.</wsdl:documentation>
+      <wsdl:input message="tns:getRedirectRules" name="getRedirectRules">
+    </wsdl:input>
+      <wsdl:output message="tns:getRedirectRulesResponse" name="getRedirectRulesResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportDetaljer">
+      <wsdl:input message="tns:getRapportDetaljer" name="getRapportDetaljer">
+    </wsdl:input>
+      <wsdl:output message="tns:getRapportDetaljerResponse" name="getRapportDetaljerResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="serverOpen">
+      <wsdl:input message="tns:serverOpen" name="serverOpen">
+    </wsdl:input>
+      <wsdl:output message="tns:serverOpenResponse" name="serverOpenResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAftalerForTaksorg">
+<wsdl:documentation>Denne metode kan bruges af brugere med rollen TAKSMANAGER(Cheftaksator). Metoden returnerer en liste af alle de aftaler det angivne taksorg har med værkstederne</wsdl:documentation>
+      <wsdl:input message="tns:getAllAftalerForTaksorg" name="getAllAftalerForTaksorg">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllAftalerForTaksorgResponse" name="getAllAftalerForTaksorgResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLakIntegrationRapportPrint">
+      <wsdl:input message="tns:getLakIntegrationRapportPrint" name="getLakIntegrationRapportPrint">
+    </wsdl:input>
+      <wsdl:output message="tns:getLakIntegrationRapportPrintResponse" name="getLakIntegrationRapportPrintResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBilagList">
+      <wsdl:input message="tns:getBilagList" name="getBilagList">
+    </wsdl:input>
+      <wsdl:output message="tns:getBilagListResponse" name="getBilagListResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBilag">
+      <wsdl:input message="tns:getBilag" name="getBilag">
+    </wsdl:input>
+      <wsdl:output message="tns:getBilagResponse" name="getBilagResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllHistAftalerForTaksorg">
+<wsdl:documentation>Denne metode kan bruges af brugere med rollen TAKSMANAGER(Cheftaksator). Metoden returnerer en liste af alle de historik aftaler det angivne taksorg har med værkstederne</wsdl:documentation>
+      <wsdl:input message="tns:getAllHistAftalerForTaksorg" name="getAllHistAftalerForTaksorg">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllHistAftalerForTaksorgResponse" name="getAllHistAftalerForTaksorgResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLakIntegrationsRapporter">
+      <wsdl:input message="tns:getLakIntegrationsRapporter" name="getLakIntegrationsRapporter">
+    </wsdl:input>
+      <wsdl:output message="tns:getLakIntegrationsRapporterResponse" name="getLakIntegrationsRapporterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportPrint">
+      <wsdl:input message="tns:getRapportPrint" name="getRapportPrint">
+    </wsdl:input>
+      <wsdl:output message="tns:getRapportPrintResponse" name="getRapportPrintResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegresBilagList">
+      <wsdl:input message="tns:getRegresBilagList" name="getRegresBilagList">
+    </wsdl:input>
+      <wsdl:output message="tns:getRegresBilagListResponse" name="getRegresBilagListResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialKoder">
+      <wsdl:input message="tns:getSpecialKoder" name="getSpecialKoder">
+    </wsdl:input>
+      <wsdl:output message="tns:getSpecialKoderResponse" name="getSpecialKoderResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findReportsBySagKey">
+      <wsdl:input message="tns:findReportsBySagKey" name="findReportsBySagKey">
+    </wsdl:input>
+      <wsdl:output message="tns:findReportsBySagKeyResponse" name="findReportsBySagKeyResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsplanlaegningRapportDetaljer">
+      <wsdl:input message="tns:getTidsplanlaegningRapportDetaljer" name="getTidsplanlaegningRapportDetaljer">
+    </wsdl:input>
+      <wsdl:output message="tns:getTidsplanlaegningRapportDetaljerResponse" name="getTidsplanlaegningRapportDetaljerResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVinAllowedFabrikater">
+      <wsdl:input message="tns:getVinAllowedFabrikater" name="getVinAllowedFabrikater">
+    </wsdl:input>
+      <wsdl:output message="tns:getVinAllowedFabrikaterResponse" name="getVinAllowedFabrikaterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsplanlaegningRapportPdf">
+      <wsdl:input message="tns:getTidsplanlaegningRapportPdf" name="getTidsplanlaegningRapportPdf">
+    </wsdl:input>
+      <wsdl:output message="tns:getTidsplanlaegningRapportPdfResponse" name="getTidsplanlaegningRapportPdfResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findNextReport">
+      <wsdl:input message="tns:findNextReport" name="findNextReport">
+    </wsdl:input>
+      <wsdl:output message="tns:findNextReportResponse" name="findNextReportResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllHistAftalerForSelskab">
+<wsdl:documentation>Denne metode kan bruges af brugere med rollen TAKSMANAGER(Cheftaksator). Metoden returnerer en liste af alle historik aftaler det angivne selskab har med værkstederne</wsdl:documentation>
+      <wsdl:input message="tns:getAllHistAftalerForSelskab" name="getAllHistAftalerForSelskab">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllHistAftalerForSelskabResponse" name="getAllHistAftalerForSelskabResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSSecurityCheckedException" name="WSSecurityCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsplanlaegningRapportPrint">
+      <wsdl:input message="tns:getTidsplanlaegningRapportPrint" name="getTidsplanlaegningRapportPrint">
+    </wsdl:input>
+      <wsdl:output message="tns:getTidsplanlaegningRapportPrintResponse" name="getTidsplanlaegningRapportPrintResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsPlanlaegningIntegrationsRapporter">
+      <wsdl:input message="tns:getTidsPlanlaegningIntegrationsRapporter" name="getTidsPlanlaegningIntegrationsRapporter">
+    </wsdl:input>
+      <wsdl:output message="tns:getTidsPlanlaegningIntegrationsRapporterResponse" name="getTidsPlanlaegningIntegrationsRapporterResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WSServerCheckedException" name="WSServerCheckedException">
+    </wsdl:fault>
+      <wsdl:fault message="tns:WSParameterCheckedException" name="WSParameterCheckedException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ForsiOutputServiceSoapBinding" type="tns:ForsiOutputWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getFabrikater">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFabrikater">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFabrikaterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAftalerForSelskab">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllAftalerForSelskab">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllAftalerForSelskabResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportData">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRapportData">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRapportDataResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLakIntegrationRapportDetaljer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLakIntegrationRapportDetaljer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLakIntegrationRapportDetaljerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportPdf">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRapportPdf">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRapportPdfResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomAftaler">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCustomAftaler">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCustomAftalerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchLakIntegrationsRapporter">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="searchLakIntegrationsRapporter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchLakIntegrationsRapporterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedirectSkadeObjekter">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRedirectSkadeObjekter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRedirectSkadeObjekterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValidationJobsForReport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getValidationJobsForReport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getValidationJobsForReportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAftaler">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAftaler">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAftalerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findReportByWideKey">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findReportByWideKey">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findReportByWideKeyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAktivitetsLogEntries">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAktivitetsLogEntries">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAktivitetsLogEntriesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedirectSkadekategorier">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRedirectSkadekategorier">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRedirectSkadekategorierResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportPdfAfsnit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRapportPdfAfsnit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRapportPdfAfsnitResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchTidsPlanlaegningIntegrationsRapporter">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="searchTidsPlanlaegningIntegrationsRapporter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchTidsPlanlaegningIntegrationsRapporterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchTaksatorRapporterForVK">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="searchTaksatorRapporterForVK">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchTaksatorRapporterForVKResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegresRapportPdf">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRegresRapportPdf">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRegresRapportPdfResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportRecords">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getReportRecords">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReportRecordsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="hentReparatoerAendringerAsV0">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hentReparatoerAendringerAsV0">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="hentReparatoerAendringerAsV0Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedirectRules">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRedirectRules">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRedirectRulesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportDetaljer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRapportDetaljer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRapportDetaljerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="serverOpen">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="serverOpen">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="serverOpenResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAftalerForTaksorg">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllAftalerForTaksorg">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllAftalerForTaksorgResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLakIntegrationRapportPrint">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLakIntegrationRapportPrint">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLakIntegrationRapportPrintResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBilagList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBilagList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBilagListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBilag">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBilag">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBilagResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllHistAftalerForTaksorg">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllHistAftalerForTaksorg">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllHistAftalerForTaksorgResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLakIntegrationsRapporter">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLakIntegrationsRapporter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLakIntegrationsRapporterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRapportPrint">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRapportPrint">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRapportPrintResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegresBilagList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRegresBilagList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRegresBilagListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialKoder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSpecialKoder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSpecialKoderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findReportsBySagKey">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findReportsBySagKey">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findReportsBySagKeyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsplanlaegningRapportDetaljer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTidsplanlaegningRapportDetaljer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTidsplanlaegningRapportDetaljerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVinAllowedFabrikater">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getVinAllowedFabrikater">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVinAllowedFabrikaterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsplanlaegningRapportPdf">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTidsplanlaegningRapportPdf">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTidsplanlaegningRapportPdfResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findNextReport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findNextReport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findNextReportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllHistAftalerForSelskab">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllHistAftalerForSelskab">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllHistAftalerForSelskabResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSSecurityCheckedException">
+        <soap:fault name="WSSecurityCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsplanlaegningRapportPrint">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTidsplanlaegningRapportPrint">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTidsplanlaegningRapportPrintResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTidsPlanlaegningIntegrationsRapporter">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTidsPlanlaegningIntegrationsRapporter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTidsPlanlaegningIntegrationsRapporterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WSServerCheckedException">
+        <soap:fault name="WSServerCheckedException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="WSParameterCheckedException">
+        <soap:fault name="WSParameterCheckedException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ForsiOutputService">
+    <wsdl:port binding="tns:ForsiOutputServiceSoapBinding" name="ForsiOutputPort">
+      <soap:address location="http://www.forsi.dk/external-webservices/secure/services/output/v0026/ForsiOutputService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
