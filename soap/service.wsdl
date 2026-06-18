@@ -6,68 +6,153 @@
     xmlns:tns="http://example.local/soap"
     targetNamespace="http://example.local/soap">
 
-  <wsdl:types>
-    <xsd:schema targetNamespace="http://example.local/soap">
-      <xsd:complexType name="files">
+<wsdl:types>
+  <xsd:schema targetNamespace="http://example.local/soap" elementFormDefault="qualified">
+
+    <xsd:complexType name="files">
+      <xsd:sequence>
+        <xsd:element name="file_id" type="xsd:int"/>
+        <xsd:element name="name" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="mimetype" type="xsd:string" minOccurs="0"/>
+        <xsd:element name="data" type="xsd:base64Binary" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="workorder">
+      <xsd:sequence>
+        <xsd:element name="plate" type="xsd:string"/>
+        <xsd:element name="brand" type="xsd:string"/>
+        <xsd:element name="jobprovider_key" type="xsd:string"/>
+        <xsd:element name="files" type="tns:files" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="workorderGetRequest">
+      <xsd:complexType>
         <xsd:sequence>
-          <xsd:element name="file_id" type="xsd:int" minOccurs="0"/>
-          <xsd:element name="name" type="xsd:string" minOccurs="0"/>
-          <xsd:element name="mimetype" type="xsd:string" minOccurs="0"/>
-          <xsd:element name="data" type="xsd:base64Binary" minOccurs="0"/>
+          <xsd:element name="workorder_id" type="xsd:int"/>
         </xsd:sequence>
       </xsd:complexType>
+    </xsd:element>
 
-      <xsd:complexType name="workorder">
+    <xsd:element name="workorderGetResponse">
+      <xsd:complexType>
         <xsd:sequence>
-          <xsd:element name="plate" type="xsd:string" minOccurs="0"/>
-          <xsd:element name="brand" type="xsd:string" minOccurs="0"/>
-          <xsd:element name="jobprovider_key" type="xsd:string" minOccurs="0"/>
+          <xsd:element name="plate" type="xsd:string"/>
+          <xsd:element name="brand" type="xsd:string"/>
+          <xsd:element name="jobprovider_key" type="xsd:string"/>
           <xsd:element name="files" type="tns:files" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
       </xsd:complexType>
+    </xsd:element>
 
-      <xsd:complexType name="workorderGetRequest">
-        <xsd:sequence>
-          <xsd:element name="workorder_id" type="xsd:int"/>
-          <xsd:element name="workorder" type="tns:workorder" minOccurs="0"/>
-        </xsd:sequence>
-      </xsd:complexType>
-
-      <xsd:complexType name="workorderFileGetRequest">
+    <xsd:element name="workorderFileGetRequest">
+      <xsd:complexType>
         <xsd:sequence>
           <xsd:element name="file_id" type="xsd:int"/>
         </xsd:sequence>
       </xsd:complexType>
+    </xsd:element>
 
-      <xsd:complexType name="workorderActionRequest">
+    <xsd:element name="workorderFileGetResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="file_id" type="xsd:int"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="mimetype" type="xsd:string"/>
+          <xsd:element name="data" type="xsd:base64Binary"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="workorderActionRequest">
+      <xsd:complexType>
         <xsd:sequence>
           <xsd:element name="workorder_id" type="xsd:int"/>
           <xsd:element name="action_key" type="xsd:string"/>
         </xsd:sequence>
       </xsd:complexType>
-    </xsd:schema>
-  </wsdl:types>
+    </xsd:element>
 
-  <wsdl:message name="workorderGetRequest">
-    <wsdl:part name="parameters" type="tns:workorderGetRequest"/>
-  </wsdl:message>
-  <wsdl:message name="workorderGetResponse">
-    <wsdl:part name="parameters" type="tns:workorder"/>
-  </wsdl:message>
+    <xsd:element name="workorderActionResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean"/>
+          <xsd:element name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
 
-  <wsdl:message name="workorderFileGetRequest">
-    <wsdl:part name="parameters" type="tns:workorderFileGetRequest"/>
-  </wsdl:message>
-  <wsdl:message name="workorderFileGetResponse">
-    <wsdl:part name="parameters" type="tns:files"/>
-  </wsdl:message>
+  </xsd:schema>
+</wsdl:types>
 
-  <wsdl:message name="workorderActionRequest">
-    <wsdl:part name="parameters" type="tns:workorderActionRequest"/>
-  </wsdl:message>
-  <wsdl:message name="workorderActionResponse">
-    <wsdl:part name="parameters" type="xsd:string"/>
-  </wsdl:message>
+<xsd:element name="workorderGetRequest">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element name="workorder_id" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="workorderFileGetRequest">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element name="file_id" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="workorderActionRequest">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element name="workorder_id" type="xsd:int"/>
+      <xsd:element name="action_key" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="workorderGetResponse">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element name="plate" type="xsd:string"/>
+      <xsd:element name="brand" type="xsd:string"/>
+      <xsd:element name="jobprovider_key" type="xsd:string"/>
+      <xsd:element name="files" type="tns:files" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="workorderFileGetResponse">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element name="file_id" type="xsd:int"/>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="mimetype" type="xsd:string"/>
+      <xsd:element name="data" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<wsdl:message name="workorderGetRequest">
+  <wsdl:part name="parameters" element="tns:workorderGetRequest"/>
+</wsdl:message>
+<wsdl:message name="workorderGetResponse">
+  <wsdl:part name="parameters" element="tns:workorderGetResponse"/>
+</wsdl:message>
+
+<wsdl:message name="workorderFileGetRequest">
+  <wsdl:part name="parameters" element="tns:workorderFileGetRequest"/>
+</wsdl:message>
+<wsdl:message name="workorderFileGetResponse">
+  <wsdl:part name="parameters" element="tns:workorderFileGetResponse"/>
+</wsdl:message>
+
+<wsdl:message name="workorderActionRequest">
+  <wsdl:part name="parameters" element="tns:workorderActionRequest"/>
+</wsdl:message>
+<wsdl:message name="workorderActionResponse">
+  <wsdl:part name="parameters" element="tns:workorderActionResponse"/>
+</wsdl:message>
 
   <wsdl:portType name="operations">
     <wsdl:operation name="workorderGet">
@@ -105,7 +190,7 @@
 
   <wsdl:service name="SoapDemo">
     <wsdl:port name="soapservice" binding="tns:standardbinding">
-      <soap:address location="http://markthuesen.dk/soap/index.php"/>
+      <soap:address location="http://mk.trp.solutions/-_Mercantec/deploy_or_die/soap/index.php"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

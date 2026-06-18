@@ -3,29 +3,46 @@ declare(strict_types=1);
 
 header('Content-Type: text/plain; charset=utf-8');
 
-try {
-    $client = new SoapClient(__DIR__ . '/soap/service.wsdl', [
-        'trace' => 1,
-        'exceptions' => true,
-        'cache_wsdl' => WSDL_CACHE_NONE,
-    ]);
+$client = new SoapClient(__DIR__ . '/soap/service.wsdl', [
+    'trace' => 1,
+    'exceptions' => true,
+    'cache_wsdl' => WSDL_CACHE_NONE,
+]);
 
-    $result = $client->workorderGet([
-        'workorder_id' => 123
-    ]);
+$workorder = $client->workorderGet([
+    'workorder_id' => 123
+]);
 
-    echo "SOAP works\n\n";
-    print_r($result);
+echo "WORKORDER RESULT\n";
+print_r($workorder);
 
-} catch (Throwable $e) {
-    echo "SOAP fejl:\n";
-    echo $e->getMessage() . "\n\n";
+// var_dump($client->__soapCall(
+//     'workorderGet',
+//     [['workorder_id' => 123]]
+// ));
+// echo "\nREQUEST\n";
+// echo $client->__getLastRequest();
 
-    if (isset($client)) {
-        echo "Last request:\n";
-        echo $client->__getLastRequest() . "\n\n";
+// echo "\n\nRESPONSE\n";
+// echo $client->__getLastResponse();
 
-        echo "Last response:\n";
-        echo $client->__getLastResponse() . "\n";
-    }
-}
+
+$fileId = $workorder->files->file_id ?? ($workorder->files[0]->file_id ?? 1);
+
+$file = $client->workorderFileGet([
+    'file_id' => $fileId
+]);
+
+echo "\n\nFILE RESULT\n";
+print_r($file);
+
+
+// var_dump($client->__soapCall(
+//     'workorderFileGet',
+//     [['file_id' => 1]]
+// ));
+// echo "\nREQUEST\n";
+// echo $client->__getLastRequest();
+
+// echo "\n\nRESPONSE\n";
+// echo $client->__getLastResponse();
