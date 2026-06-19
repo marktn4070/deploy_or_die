@@ -1,0 +1,24 @@
+Options -MultiViews +FollowSymLinks
+
+RewriteEngine on
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^/?(.*) https://%{HTTP_HOST}/-_Mercantec/deploy_or_die/frontend/$1 [R,L]
+
+RewriteBase /-_Mercantec/deploy_or_die/frontend/
+RewriteRule login/$ login.php [L]
+RewriteRule confirm/$ mo_user/confirm.php [L]
+RewriteRule client/$ mo_client/list.php [L]
+RewriteRule dashboard/$ mo_dashboard/main.php [L]
+RewriteRule case/$ mo_case/list.php [L]
+RewriteRule user/$ mo_user/list.php [L]
+RewriteRule stat/$ mo_stat/list.php [L]
+RewriteRule invoice/$ mo_invoice/list.php [L]
+RewriteRule catalog/$ mo_catalog/model.php [L]
+RewriteRule illustration/$ mo_catalog/illustration.php [L]
+RewriteRule area/([A-Za-z_0-9]+)/?$ mo_catalog/area.php?illustration_id=$1 [L]
+RewriteRule brain/$ mo_brain/select.php [L]
+RewriteRule brain/([0-9]+)/?$ mo_brain/overview.php?model_id=$1 [L]
+RewriteRule insurance/$ mo_insurance/list.php [L]
+RewriteRule group/$ mo_group/list.php [L]
+RewriteRule insert/?$ -_Mercantec/deploy_or_die/frontend/api/case/insert.php [L]
+RewriteRule upload/([0-9]+)/?$ -_Mercantec/deploy_or_die/frontend/api/case/upload.php/$1 [L]

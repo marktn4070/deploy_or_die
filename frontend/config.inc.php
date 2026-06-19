@@ -1,7 +1,7 @@
 <?php
 //error_reporting(E_ALL | E_STRICT);
 
-define('__ROOT__','/takseringshjaelp');
+define('__ROOT__','https://mk.trp.solutions/-_Mercantec/deploy_or_die/frontend');
 
 define('DBHOST','127.0.0.1');
 define('DBUSER','pmadmin');

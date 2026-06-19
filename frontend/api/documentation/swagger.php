@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . "/../header.inc.php";
+require_once __DIR__ . "/../../header.inc.php";
 
 $unpkgLink = "https://unpkg.com/swagger-ui-dist@5.30.1/";
 $root = __ROOT__;
