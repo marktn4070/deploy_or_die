@@ -1,18 +1,18 @@
 {
 	"openapi": "3.0.0",
 	"info": {
-		"title": "Takseringshjælp",
+		"title": "Workorder",
 		"description": "OpenAPI spec for Damage Assessment Helper with two endpoints: Create case and upload file to case.",
 		"contact": {
-			"name": "Takseringshjælp",
-			"url": "https://xn--takseringshjlp-cjb.dk",
-			"email": "support@takseringshjaelp.dk"
+			"name": "dod",
+			"url": "https://markthuesen.dk/",
+			"email": "support@dod.dk"
 		},
 		"version": "1.0.0"
 	},
 	"servers": [
 		{
-			"url": "https://127.0.0.1/takseringshjaelp/api/case",
+			"url": "https://127.0.0.1/-_Mercantec/deploy_or_die/frontend/api/case",
 			"description": "API server"
 		}
 	],

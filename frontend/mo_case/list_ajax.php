@@ -66,7 +66,7 @@ $where = $where ? implode(' AND ',$where) : 'TRUE';
 
 $sql = "SELECT `case`.id,`case`.status,`case`.plate,`client`.name as client,`case`.attention,
 		`insurance`.name as insurance,responsible.name as responsible,`case`.`create`,`case`.`deadline`,
-		`client`.`disable`,`client`.`archive`,`client`.`batch`,IF(`case_comment`.`id` IS NULL,0,1) as comment,
+		`client`.`disable`,`client`.`archive`,`client`.`batch`,COUNT(DISTINCT `case_comment`.`id`) as comment,
 		GROUP_CONCAT(DISTINCT `damage`.`state`) as state,`case`.`note`
 	FROM `case`
 	$clientjoin
@@ -93,7 +93,7 @@ if($query->num_rows) {
 	$thead->th()->te('Selskab');
 	$thead->th()->te('Ansvarlig');
 	$thead->th()->te('Oprettet');
-	if(SimpleAuth::access('employee'))$thead->th()->te('Deadline');
+	if(SimpleAuth::access('employee')) $thead->th()->te('Deadline');
 	
 	$now = new DateTime('now');
 	$ds = damage_state();
@@ -104,7 +104,6 @@ if($query->num_rows) {
 		
 		$td = $tr->td();
 
-		
 		if($rs->attention) {
 			$td->te(' ');
 			$td->el('span',['class'=>'text-info'])->icon('calculator');

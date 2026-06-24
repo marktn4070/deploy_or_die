@@ -91,7 +91,11 @@ if (count($details) > 0) {
 }
 
 // SQL
-$case_id = Post::create_case($params);
+try {
+    $case_id = Post::create_case($params);
+} catch (Throwable $e) {
+    response_error('Internal server error in create_case.', 500, $e->getMessage());
+}
 
 // Response message - success
 http_response_code(201);

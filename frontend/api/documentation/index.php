@@ -13,7 +13,7 @@ $protocol = (empty($_SERVER['HTTPS']) ? 'http' : 'https');
 $host = $_SERVER['HTTP_HOST'];
 $replaceTo = $protocol . '://' . $host;
 
-$jsonPath = __DIR__ . '/../json/Takseringshjaelp.json';
+$jsonPath = __DIR__ . '/../json/workoder.json';
 $jsonContent = file_get_contents($jsonPath);
 
 $jsonReplaced = str_replace($replaceFrom, $replaceTo, $jsonContent);
