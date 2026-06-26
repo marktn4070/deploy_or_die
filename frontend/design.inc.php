@@ -56,7 +56,7 @@ function navbar($page) {
 	
 	$swaggerButton = $nav->el('button')->at([
 		'type' => 'button', 
-		'onclick' => "location.href='".__ROOT__."/api/documentation/swagger.php';", 
+		'onclick' => "location.href='".__ROOT__."/api/swagger';", 
 		'class' => 'btn btn-secodary'
 	]);
 	
